@@ -1,4 +1,12 @@
 export default function Card({ id, title, image, content, tags, published }) {
+  // Mappa di colori per i tag
+  const tagColors = {
+    html: "success", // verde
+    css: "danger", // rosso
+    js: "warning", // giallo
+    php: "info", // azzurro
+  };
+
   return (
     <div className="card">
       {/* Immagine dinamica  */}
@@ -16,10 +24,14 @@ export default function Card({ id, title, image, content, tags, published }) {
           Leggi di più
         </a>
 
+        {/* Se i tag sono presenti, mostrali con il colore giusto */}
         {tags && tags.length > 0 && (
           <div className="mt-2">
             {tags.map((tag, index) => (
-              <span key={index} className="badge bg-secondary me-1">
+              <span
+                key={index}
+                className={`badge bg-${tagColors[tag] || "secondary"} me-1`}
+              >
                 {tag}
               </span>
             ))}
