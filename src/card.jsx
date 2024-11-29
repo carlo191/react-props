@@ -1,20 +1,18 @@
 export default function Card({ id, title, image, content, tags, published }) {
   return (
-    <div className="card" style={{ width: "20rem", height: "100%" }}>
-      {/* Immagine dinamica con fallback */}
+    <div className="card">
+      {/* Immagine dinamica  */}
       <img
         src={image || "https://via.placeholder.com/150"}
         className="card-img-top"
         alt={title || "Immagine del post"}
       />
       <div className="card-body">
-        <h5 className="card-title">{title || "Titolo del Post"}</h5>
+        <h5 className="card-title">{title}</h5>
 
-        <p className="card-text">
-          {content || "Testo di esempio per il contenuto del post."}
-        </p>
+        <p className="card-text">{content}</p>
 
-        <a href={`/post/${id}`} className="btn btn-warning text-light">
+        <a href={"#"} className="btn btn-warning text-light">
           Leggi di più
         </a>
 
@@ -26,10 +24,6 @@ export default function Card({ id, title, image, content, tags, published }) {
               </span>
             ))}
           </div>
-        )}
-
-        {published && (
-          <small className="text-muted">Pubblicato il: {published}</small>
         )}
       </div>
     </div>
