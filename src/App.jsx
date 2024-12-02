@@ -1,8 +1,8 @@
 import "bootstrap/dist/css/bootstrap.css";
 import Header from "./components/header";
-import Card from "./card";
+import Card from "./components/card";
 import Footer from "./components/footer";
-import { posts } from "./components/data/posts";
+import { posts } from "./data/posts";
 
 function App() {
   return (
